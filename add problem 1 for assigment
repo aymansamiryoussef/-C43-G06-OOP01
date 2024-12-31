@@ -172,12 +172,28 @@ namespace C_OOB_Assignment1
 
  #endregion
 
+#region program 01
+
+//foreach (Days i in Enum.GetValues(typeof(Days)))
+//{
+//    Console.WriteLine(i.ToString());
+//}
+
+
+
+
+#endregion
+
 
 
      }
 
 
 
+ }
+ enum Days : byte
+ {
+     monday, thursday, weednesday, tuesday, friday, sturday
  }
 enum Colors
 {
