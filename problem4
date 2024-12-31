@@ -127,12 +127,64 @@ namespace C_OOB_Assignment1
 
 
 
+         #region problem04
+
+ //Colors _selectedcolor;
+ //bool _isparssed;
+     
+ //do
+ //{
+ //    Console.WriteLine(" Enter color to know it primary color or not ");
+ //    _isparssed = Enum.TryParse(Console.ReadLine(), true, out _selectedcolor);
+ //  if(_isparssed)
+ //    {
+ //        switch (_selectedcolor)
+ //        {
+
+
+ //            case Colors.red:
+ //                Console.WriteLine(" primary color ");
+ //                break;
+ //            case Colors.green:
+ //                Console.WriteLine(" primary color ");
+ //                break;
+ //            case Colors.blue:
+ //                Console.WriteLine(" primary color ");
+ //                break;
+ //            default:
+ //                Console.WriteLine("Not  primary color ");
+ //                break;
+
+
+ //        }
+ //    }
+ //  else
+ //    {
+ //        Console.WriteLine("Invalid");
+ //    }
+     
+
+
+ //} while (_isparssed);
+
+
+
+
+ #endregion
+
+
 
      }
 
 
 
  }
+enum Colors
+{
+    red,
+    green,
+    blue,
+}
  enum Season
  {
      Spring,
