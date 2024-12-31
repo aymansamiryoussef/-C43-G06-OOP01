@@ -1,0 +1,32 @@
+namespace C_OOB_Assignment1
+{
+    internal class Program
+    {
+
+        public static void Main(string[] args)
+        {
+            //Problem 1
+
+            foreach (Days i in Enum.GetValues(typeof(Days)))
+            {
+
+                Console.WriteLine(i.ToString());
+            }
+
+
+        }
+        enum Days : byte
+        {
+            monday,
+            thursday,
+            weednesday,
+            tuesday,
+            friday,
+            sturday
+
+
+        }
+
+
+    }
+}
