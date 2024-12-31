@@ -1,0 +1,154 @@
+namespace C_OOB_Assignment1
+{
+    internal class Program
+ {
+
+      internal class Program
+ {
+
+     public static void Main(string[] args)
+     {
+         #region problem2
+         ////Problem 2
+         //Console.WriteLine("Enter a season name (Spring, Summer, Autumn, Winter)");
+         //Season s;
+         //bool _isparssed;
+
+         //do
+         //{
+         //    _isparssed= Enum.TryParse(Console.ReadLine(),true ,out s);
+         //    if(_isparssed)
+         //    {
+         //        switch (s)
+         //        {
+         //            case Season.Spring:
+         //                Console.WriteLine("March to May");
+         //                break;
+         //            case Season.Summer:
+         //                Console.WriteLine("June to August");
+         //                break;
+         //            case Season.Autumn:
+         //                Console.WriteLine("September to November");
+         //                break;
+         //            case Season.Winter:
+         //                Console.WriteLine(" December to February");
+         //                break;
+
+         //        }
+         //    }
+         //    else
+         //    {
+         //        Console.WriteLine("Enter valid season");
+         //    }
+
+         //} while (_isparssed);
+         #endregion
+
+         #region problem3
+         bool _isparssed;
+         Permissions mypermission = Permissions.none;
+         Permissions selected;
+         do
+         {
+             
+             Console.WriteLine($"current permission is: {mypermission} write if want add or remove or check exist permision");
+             string s = Console.ReadLine()!.ToUpper();
+             if (s == "EXIT")
+                 break;
+
+             if (s=="ADD")
+             {
+                 Console.WriteLine("Enter the permission to ADD (Read, Write, Delete, Execute):");
+                 _isparssed = Enum.TryParse(Console.ReadLine(), true, out selected);
+
+                 if (_isparssed)
+                 {
+                     mypermission |= selected;
+                     Console.WriteLine($"{selected} added,current permission is {mypermission}");
+                  
+                 }
+                 else
+                 {
+                     Console.WriteLine("Invalid ");
+                 }
+
+
+             }
+             else if( s=="REMOVE")
+             {
+                 Console.WriteLine("Enter the permission to REMOVE (Read, Write, Delete, Execute):");
+                 _isparssed = Enum.TryParse(Console.ReadLine(), true, out selected);
+
+                 if (_isparssed)
+                 {
+                     mypermission ^= selected;
+                     Console.WriteLine($"{selected}  removed., current permission is {mypermission}");
+
+                 }
+                 else
+                 {
+                     Console.WriteLine("Invalid ");
+                 }
+
+             }
+             else if(s=="CHECK")
+             {
+                 Console.WriteLine("Enter the permission to check exist (Read, Write, Delete, Execute):");
+                 _isparssed = Enum.TryParse(Console.ReadLine(), true, out selected);
+
+                 if (_isparssed)
+                 {
+                     if ((mypermission & selected) == selected)
+                     {
+                         Console.WriteLine($"{selected}  exist current permission is {mypermission}");
+
+                     }
+
+                 }
+                 else
+                 {
+                     Console.WriteLine("Invalid ");
+                 }
+
+
+
+
+             }
+             else
+             {
+                 Console.WriteLine("Enter the correct action");
+             }
+            
+
+
+         } while (true);
+
+         #endregion
+
+
+
+
+     }
+
+
+
+ }
+ enum Season
+ {
+     Spring,
+     Summer,
+     Autumn,
+     Winter
+ }
+ [Flags]
+ enum Permissions
+ {
+     none=0,
+     Read=1,
+     write=2,
+     Delete=4,
+     Execute=8
+ }
+
+ }
+}
